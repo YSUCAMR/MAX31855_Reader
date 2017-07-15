@@ -5,8 +5,6 @@
 #logging.basicConfig(level=logging.DEBUG)
 
 import time
-
-
 import datetime as dt
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_MAX31855.MAX31855 as MAX31855
@@ -64,10 +62,9 @@ with open("/home/pi/Programs/project2b/py_thermocouple/test.txt","a") as data:
            
                 intertemp_C = '{0:0.3F}'.format(internal, c_to_f(internal))
                 intertemp_F = '{1:0.3F}'.format(temp, c_to_f(internal))
+                
                 data.write( '{0} \t {1} \t {3} \t {4}'.format(clock,float(thermotemp_C),float(thermotemp_F),float(intertemp_C),float(intertemp_F)))
         
-
-
                 time.sleep(0.5)
 
 
